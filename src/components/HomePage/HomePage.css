@@ -1,0 +1,22 @@
+.header-div{
+    display: flex;
+    flex-direction: row;
+    padding: 40px 60px;
+    justify-content: space-between;
+}
+.header-left{
+    padding: 100px 100px 0 100px;
+    flex: 1;
+}
+.header-left p{
+    width: 60%;
+}
+.header-right{
+    flex: 1;
+}
+.categories{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 50px 40px;
+}
