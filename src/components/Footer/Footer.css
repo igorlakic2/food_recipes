@@ -1,0 +1,15 @@
+.footer-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 80px;
+}
+p{
+    text-align: center;
+    padding: 20px 0;
+}
+.social i{
+    color: black;
+    font-size: 50px;
+    padding: 50px 0;
+}

@@ -8,7 +8,7 @@ const Category = (props) => {
     return (
         <div style={styles}>
             <img src={props.thumbnail} alt="" style={{ width: '60%', height: '60%' }} />
-            <h3>{props.name}</h3>
+            <h3 style={{ marginTop: '10px' }}>{props.name}</h3>
         </div>
     );
 }

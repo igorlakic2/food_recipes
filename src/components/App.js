@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from './Header/Header';
+import Footer from './Footer/Footer';
 import HomePage from './HomePage/HomePage';
 import CategoryPage from './CategoryPage/CategoryPage';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 
 const App = () => {
     return (
@@ -11,6 +12,7 @@ const App = () => {
                 <Header />
                 <Route path="/" exact component={HomePage} />
                 <Route path="/category" exact component={CategoryPage} />
+                <Footer />
             </div>
         </BrowserRouter>
     );

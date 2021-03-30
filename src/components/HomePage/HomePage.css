@@ -11,6 +11,14 @@
 .header-left p{
     width: 60%;
 }
+.header-left button{
+    background-color: #f9982d;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 10px;
+}
 .header-right{
     flex: 1;
 }
@@ -18,5 +26,50 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 50px 40px;
+    padding: 50px 60px;
+}
+.about-us{
+    padding: 20px 80px;
+}
+.about-row{
+    display: flex;
+    flex-direction: row;
+    padding: 50px 0;
+}
+.about-info{
+    width: 50%;
+}
+.about-info p{
+    padding-top: 0;
+    width: 65%;
+    text-align: left;
+}
+.about-image{
+    width: 50%;
+}
+.about-image img{
+    width: 100%;
+}
+.contact-form{
+    text-align: center;
+    padding: 60px 0;
+}
+.contact-form input, textarea{
+    display: block;
+    margin: auto;
+    width: 350px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: 1px solid #d3d2d2;
+    border-radius: 7px;
+    outline: none;
+}
+.contact-form button{
+    background-color: #f9982d;
+    color: white;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 10px;
 }
