@@ -81,10 +81,10 @@ const Home = () => {
                 <h2 style={{ textAlign: 'center' }}><span style={{borderBottom: '2px solid black', paddingBottom: '15px' }}>Contact</span></h2>
                 <div className="contact-form">
                     <form onSubmit={onFormSubmit}>
-                        <input type="text" onChange={(event) => setSingleFormData({...singleFormData, fname: event.target.value})} id="" placeholder="First name" />
-                        <input type="text" onChange={(event) => setSingleFormData({...singleFormData, lname: event.target.value})} name="" id="" placeholder="Last name" />
-                        <input type="text" onChange={(event) => setSingleFormData({...singleFormData, email: event.target.value})} name="" id="" placeholder="Email" />
-                        <textarea name="" onChange={(event) => setSingleFormData({...singleFormData, message: event.target.value})} id="" cols="30" rows="10" placeholder="Message"></textarea>
+                        <input type="text" onChange={(event) => setSingleFormData({...singleFormData, fname: event.target.value})} placeholder="First name" />
+                        <input type="text" onChange={(event) => setSingleFormData({...singleFormData, lname: event.target.value})} placeholder="Last name" />
+                        <input type="text" onChange={(event) => setSingleFormData({...singleFormData, email: event.target.value})} placeholder="Email" />
+                        <textarea name="" onChange={(event) => setSingleFormData({...singleFormData, message: event.target.value})} cols="30" rows="10" placeholder="Message"></textarea>
                         <button>Send</button>
                     </form>
                 </div>
@@ -94,4 +94,14 @@ const Home = () => {
 }
 export default Home;
 
-// onChange={(event) => setFormData({...formData, fname: event.target.value})}
+
+
+
+            // <a data-tip='<div>
+            //     <form action="">
+            //         <input type="text" placeholder="Email" />
+            //         <input type="password" placeholder="Password" />
+            //     <button>Login</button>
+            // </form>
+            // </div>' data-event='click focus'>STA JE OVO</a>
+            // <ReactTooltip globalEventOff='click' html={true} />

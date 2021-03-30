@@ -18,6 +18,7 @@
     border: none;
     border-radius: 15px;
     margin-top: 10px;
+    user-select: cursor;
 }
 .header-right{
     flex: 1;
@@ -72,4 +73,5 @@
     border: none;
     border-radius: 15px;
     margin-top: 10px;
+    user-select: cursor;
 }
