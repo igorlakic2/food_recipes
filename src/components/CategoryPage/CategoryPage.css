@@ -1,0 +1,27 @@
+.recommendation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.inputSearch{
+    background-repeat: no-repeat;
+    background-position: right center;
+    outline: 0;
+    background-image: url('https://img.icons8.com/ios/2x/search--v1.png');
+    background-size: contain;
+    padding: 5px 11px;
+    font-size: 13px;
+    border-radius: 7px;
+    border: 1px solid #d3d2d2;
+    background-origin: content-box;
+}
+.meals{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.meals > *{
+    flex: 30%;
+}
