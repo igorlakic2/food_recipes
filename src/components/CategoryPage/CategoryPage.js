@@ -18,13 +18,12 @@ const CategoryPage = () => {
         food(name);
         getRandomMeal();
 
-        const rndrnd = meals.filter((meal) => meal.strCategory === name);
-        console.log(rndrnd);
     }, []);    
+    
 
     const getRandomMeal = async () => {
-        const response = await axios.get('https://www.themealdb.com/api/json/v1/1/random.php');        
-        setRandomMeal(response.data.meals[0]);
+        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c${name}`);    
+        console.log(response.data.meals);
     }
 
     // const rnd = randomMeal.strCategory === name ? randomMeal : getRandomMeal();
@@ -40,6 +39,11 @@ const CategoryPage = () => {
                 <div className="left">
                     <h1>{name}</h1>
                     <p>Our recommendation</p>
+                    {/* { <Meal 
+                        id={rnd[Math.floor(Math.random() * rnd.length)].idMeal} 
+                        thumbnail={rnd[Math.floor(Math.random() * rnd.length)].strMealThumb}  
+                        name={rnd[Math.floor(Math.random() * rnd.length)].strMeal}
+                    /> } */}
                 </div>
                 <div className="right">
                     <input type="text" className="inputSearch" placeholder="Search meals" />
