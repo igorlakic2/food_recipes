@@ -13,6 +13,7 @@ const Home = () => {
         email: null,
         message: null
     });
+    const [category, setCategory] = useState(null);
 
     const getCategories = async () => {
         const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
@@ -23,8 +24,18 @@ const Home = () => {
         getCategories();
     }, []);    
 
+    // const onCategoryClick = async (name) => {
+    //     const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`);
+    //     setCategory(response.data.meals);
+
+
     const categoriesList = categories.map((category) => {
-        return <Category key={category.idCategory} thumbnail={category.strCategoryThumb} name={category.strCategory} />
+        return <Category 
+                // onCategoryClick={onCategoryClick} 
+                key={category.idCategory} 
+                thumbnail={category.strCategoryThumb} 
+                name={category.strCategory} 
+        />
     });
 
     const onFormSubmit = (event) => {
@@ -103,5 +114,5 @@ export default Home;
             //         <input type="password" placeholder="Password" />
             //     <button>Login</button>
             // </form>
-            // </div>' data-event='click focus'>STA JE OVO</a>
+            // </div>' data-event='click focus'>display</a>
             // <ReactTooltip globalEventOff='click' html={true} />

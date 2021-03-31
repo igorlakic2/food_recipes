@@ -11,7 +11,7 @@ const App = () => {
             <div>
                 <Header />
                 <Route path="/" exact component={HomePage} />
-                <Route path="/category" exact component={CategoryPage} />
+                <Route path="/category/:name" exact component={CategoryPage} />
                 <Footer />
             </div>
         </BrowserRouter>
