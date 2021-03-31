@@ -13,7 +13,6 @@ const Home = () => {
         email: null,
         message: null
     });
-    const [category, setCategory] = useState(null);
 
     const getCategories = async () => {
         const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
@@ -24,14 +23,8 @@ const Home = () => {
         getCategories();
     }, []);    
 
-    // const onCategoryClick = async (name) => {
-    //     const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`);
-    //     setCategory(response.data.meals);
-
-
     const categoriesList = categories.map((category) => {
         return <Category 
-                // onCategoryClick={onCategoryClick} 
                 key={category.idCategory} 
                 thumbnail={category.strCategoryThumb} 
                 name={category.strCategory} 
@@ -69,7 +62,7 @@ const Home = () => {
             <div className="categories">
                 {categoriesList}
             </div>
-            <div className="about-us">
+            <div className="about-us" id="about-us">
                 <h2><span style={{borderBottom: '2px solid black', paddingBottom: '15px' }}>About Us</span></h2>
                 <div className="about-row">
                     <div className="about-info">

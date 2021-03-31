@@ -4,7 +4,7 @@ import axios from 'axios';
 import './CategoryPage.css';
 import Meal from '../Meal';
 
-const CategoryPage = () => {  
+const CategoryPage = (props) => {  
     const { name } = useParams();   
     const [meals, setMeals] = useState([]);
     const [randomMeal, setRandomMeal] = useState([]);
@@ -15,8 +15,10 @@ const CategoryPage = () => {
         setRandomMeal(response.data.meals[Math.floor(Math.random() * response.data.meals.length)]);
     }
 
+
     useEffect(() => {
         food(name);
+        console.log(props.location);
     }, []);    
 
     const renderMeals = meals.map((meal) => {

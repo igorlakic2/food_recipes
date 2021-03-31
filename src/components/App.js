@@ -12,6 +12,7 @@ const App = () => {
                 <Header />
                 <Route path="/" exact component={HomePage} />
                 <Route path="/category/:name" exact component={CategoryPage} />
+                <Route path="/single_meal/:id" exact component={SingleMeal} />
                 <Footer />
             </div>
         </BrowserRouter>
