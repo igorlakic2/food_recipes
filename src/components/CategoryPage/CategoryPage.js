@@ -7,26 +7,17 @@ import Meal from '../Meal';
 const CategoryPage = () => {  
     const { name } = useParams();   
     const [meals, setMeals] = useState([]);
-    const [randomMeal, setRandomMeal] = useState(null);
+    const [randomMeal, setRandomMeal] = useState([]);
 
-    const food = async (name) => {
-        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`);
+    const food = async (category) => {
+        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
         setMeals(response.data.meals);
+        setRandomMeal(response.data.meals[Math.floor(Math.random() * response.data.meals.length)]);
     }
 
     useEffect(() => {
         food(name);
-        getRandomMeal();
-
     }, []);    
-    
-
-    const getRandomMeal = async () => {
-        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c${name}`);    
-        console.log(response.data.meals);
-    }
-
-    // const rnd = randomMeal.strCategory === name ? randomMeal : getRandomMeal();
 
     const renderMeals = meals.map((meal) => {
         return <Meal key={meal.idMeal} id={meal.idMeal} thumbnail={meal.strMealThumb} name={meal.strMeal} />
@@ -35,20 +26,24 @@ const CategoryPage = () => {
 
     return (
         <div className="category-page">
-            <div className="recommendation">
+            <div className="our-recommendation">
                 <div className="left">
                     <h1>{name}</h1>
-                    <p>Our recommendation</p>
-                    {/* { <Meal 
-                        id={rnd[Math.floor(Math.random() * rnd.length)].idMeal} 
-                        thumbnail={rnd[Math.floor(Math.random() * rnd.length)].strMealThumb}  
-                        name={rnd[Math.floor(Math.random() * rnd.length)].strMeal}
-                    /> } */}
+                    <div className="recommendation">
+                        <p style={{ textAlign: 'left' }}>Our recommendation</p>
+                        { <Meal 
+                            id={randomMeal.idMeal} 
+                            thumbnail={randomMeal.strMealThumb}  
+                            name={randomMeal.strMeal}
+                            style
+                        /> } 
+                    </div>
                 </div>
                 <div className="right">
                     <input type="text" className="inputSearch" placeholder="Search meals" />
                 </div>
             </div>
+            <hr />
             <div className="meals">{renderMeals}</div>
         </div>
     );

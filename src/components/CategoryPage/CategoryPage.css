@@ -1,8 +1,12 @@
-.recommendation{
+.our-recommendation{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 50px 100px;
 
+}
+hr{
+    margin: 30px 100px;
 }
 .inputSearch{
     background-repeat: no-repeat;
@@ -21,7 +25,12 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 50px 100px 100px 100px;
 }
 .meals > *{
-    flex: 30%;
+    flex: 25%;
+    padding: 20px 0;
+}
+.right input{
+    margin: 40px 0 0 0;
 }
