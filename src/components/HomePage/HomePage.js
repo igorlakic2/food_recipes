@@ -3,6 +3,8 @@ import './HomePage.css';
 import { Link } from 'react-router-dom'; 
 import axios from 'axios';
 import Category from '../Category/Category';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
     const [categories, setCategories] = useState([]);
@@ -42,6 +44,7 @@ const Home = () => {
 
     return (
         <div>
+            <Header />
             <div className="header-div header">
                 <div className="header-left">
                     <h1>Food recipes</h1>
@@ -93,6 +96,7 @@ const Home = () => {
                     </form>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

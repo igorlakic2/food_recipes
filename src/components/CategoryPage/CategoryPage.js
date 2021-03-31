@@ -3,8 +3,10 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './CategoryPage.css';
 import Meal from '../Meal';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
-const CategoryPage = (props) => {  
+const CategoryPage = () => {  
     const { name } = useParams();   
     const [meals, setMeals] = useState([]);
     const [randomMeal, setRandomMeal] = useState([]);
@@ -18,7 +20,6 @@ const CategoryPage = (props) => {
 
     useEffect(() => {
         food(name);
-        console.log(props.location);
     }, []);    
 
     const renderMeals = meals.map((meal) => {
@@ -28,6 +29,7 @@ const CategoryPage = (props) => {
 
     return (
         <div className="category-page">
+            <Header />
             <div className="our-recommendation">
                 <div className="left">
                     <h1>{name}</h1>
@@ -47,6 +49,7 @@ const CategoryPage = (props) => {
             </div>
             <hr />
             <div className="meals">{renderMeals}</div>
+            <Footer />
         </div>
     );
 }

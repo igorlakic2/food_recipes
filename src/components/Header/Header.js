@@ -2,19 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'
 
+const Header = (props) => {
 
-const Header = () => {
+    const showMenuItems = (path) => {
+        return window.location.pathname === '/' ? 
+        <li className="avatar">
+            <i className="user circle outline icon"></i>
+        </li> : 
+        <li>
+            <Link className="link" to="/">Home</Link>
+        </li>;
+    }
+
+    // props.path ? showMenuItems(props.path) : console.log("???");
+    
+
     return (
         <div className="header">
             <div className="searchBar">
                 <input type="text" className="inputSearch" placeholder="Search recipes"></input>
             </div>
             <div className="menu">
-                <div className="avatar">
-                    <i className="user circle outline icon"></i>
-                </div>
                     <div className="nav">
                         <ul>
+                            {showMenuItems(props.path)}
                             <li>
                                 <Link className="link" to="/">About Us</Link>
                             </li>

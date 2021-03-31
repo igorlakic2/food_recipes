@@ -1,0 +1,36 @@
+.single-meal-top{
+    display: flex;
+    flex-direction: row;
+}
+.single-meal-info{
+    padding: 100px 100px 100px 20px;
+}
+.single-meal-info > *{
+    text-align: left;
+    padding: 0;
+}
+.single-meal-image{
+    padding: 30px;
+}
+table{
+    padding: 0 30px;
+    font-size: 16px;
+}
+table th{
+    text-align: left;    
+}
+th:last-child{
+    padding-left: 15px;
+}
+td:last-child{
+    padding-left: 15px;
+}
+.similar-meals{
+    display: flex;
+    flex-direction: row;
+
+}
+.single-meal{
+    text-align: center;
+    padding: 30px;
+}
