@@ -6,7 +6,7 @@ import Category from '../Category/Category';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-const Home = () => {
+const Home = (props) => {
     const [categories, setCategories] = useState([]);
     const [formData, setFormData] = useState([]);
     const [singleFormData, setSingleFormData] = useState({
@@ -36,7 +36,7 @@ const Home = () => {
     const onFormSubmit = (event) => {
         event.preventDefault();
         setFormData([...formData, singleFormData]);
-    }
+    }    
 
     useEffect(() => {
         console.log(formData);

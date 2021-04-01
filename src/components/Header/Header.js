@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Header.css'
+import { Link, useHistory } from 'react-router-dom';
+import './Header.css';
 
-const Header = (props) => {
+const Header = (props) => {    
+    const history = useHistory();
 
     const showMenuItems = (path) => {
         return window.location.pathname === '/' ? 
@@ -14,13 +15,22 @@ const Header = (props) => {
         </li>;
     }
 
-    // props.path ? showMenuItems(props.path) : console.log("???");
+    const onInputSubmit = (event) =>{
+        if(event.key == 'Enter'){
+            history.push(`/search/${event.target.value}`);
+        }
+    }
     
 
     return (
         <div className="header">
             <div className="searchBar">
-                <input type="text" className="inputSearch" placeholder="Search recipes"></input>
+                <input 
+                    type="text" 
+                    className="inputSearch" 
+                    onKeyPress={onInputSubmit} 
+                    placeholder="Search recipes"
+                ></input>
             </div>
             <div className="menu">
                     <div className="nav">
