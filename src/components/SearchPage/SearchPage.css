@@ -1,0 +1,20 @@
+.our-recommendation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 100px;
+
+}
+hr{
+    margin: 30px 100px;
+}
+.search-results{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px 100px 100px 100px;
+}
+.search-results > *{
+    padding: 20px 0;
+}

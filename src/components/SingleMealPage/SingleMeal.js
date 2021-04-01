@@ -18,8 +18,7 @@ const SingleMeal = () => {
     }
 
     const renderSimilarMeals = async category => {        
-        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`); 
-        // setSimilarMeals(response.data.meals);     
+        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);   
         const array = [];
         
         for(let i=0; i<3; i++){

@@ -16,7 +16,7 @@ const Header = (props) => {
     }
 
     const onInputSubmit = (event) =>{
-        if(event.key == 'Enter'){
+        if(event.key === 'Enter'){
             history.push(`/search/${event.target.value}`);
         }
     }
