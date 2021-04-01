@@ -10,8 +10,6 @@ const SingleMeal = () => {
     const [singleMeal, setSingleMeal] = useState([]);
     const [similarMeals, setSimilarMeals] = useState([]);
 
-    const arr = [];
-
     const getSingleMeal = async (id) => {
         const params = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
         setSingleMeal(params.data.meals[0]);
@@ -101,8 +99,10 @@ const SingleMeal = () => {
                 </div>
             </div>
             <div className="similar-meals">
-                <h2>Similar meals</h2>             
-                    {similarList} 
+                <h2>Similar meals</h2>  
+                <div style={{display: 'flex'}}>      
+                    {similarList}
+                </div>      
             </div>
             <Footer />
         </div>

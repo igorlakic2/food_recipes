@@ -29,6 +29,15 @@
     flex-wrap: wrap;
     padding: 50px 60px;
 }
+.categories > *{
+    flex: 30%;
+    max-width: 30%;
+    padding: 20px 0;
+}
+.categories h3{
+    margin: 0;
+    color: black;
+}
 .about-us{
     padding: 20px 80px;
 }
