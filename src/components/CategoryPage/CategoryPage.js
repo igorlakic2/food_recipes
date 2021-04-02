@@ -10,6 +10,8 @@ const CategoryPage = () => {
     const { name } = useParams();   
     const [meals, setMeals] = useState([]);
     const [randomMeal, setRandomMeal] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
 
     const food = async (category) => {
         const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
@@ -22,10 +24,22 @@ const CategoryPage = () => {
         food(name);
     }, []);    
 
+    useEffect(() => {        
+        search(searchTerm);
+    }, [searchTerm]);
+
+    const search = (term) => {
+        const niz = [...meals].filter((meal) => meal.strMeal.includes(term));
+        setSearchResults(niz);
+    }
+
     const renderMeals = meals.map((meal) => {
         return <Meal key={meal.idMeal} id={meal.idMeal} thumbnail={meal.strMealThumb} name={meal.strMeal} />
     });
-
+    
+    const searchResultsList = searchResults.map((meal) => {
+        return <Meal key={meal.idMeal} id={meal.idMeal} thumbnail={meal.strMealThumb} name={meal.strMeal} />
+    })
 
     return (
         <div className="category-page">
@@ -44,11 +58,11 @@ const CategoryPage = () => {
                     </div>
                 </div>
                 <div className="right">
-                    <input type="text" className="inputSearch" placeholder="Search meals" />
+                    <input onChange={(event) => setSearchTerm(event.target.value)} type="text" className="inputSearch" placeholder="Search meals" />
                 </div>
             </div>
             <hr />
-            <div className="meals">{renderMeals}</div>
+            <div className="meals">{searchTerm.length > 0 ? searchResultsList : renderMeals}</div>
             <Footer />
         </div>
     );

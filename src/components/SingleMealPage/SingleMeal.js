@@ -37,7 +37,6 @@ const SingleMeal = () => {
                     <img 
                         src={meal.strMealThumb} 
                         alt={meal.strMeal} 
-                        style={{width: '250px'}}
                     />
                     <p>{meal.strMeal}</p>
                 </div>
@@ -52,7 +51,7 @@ const SingleMeal = () => {
                 <div className="single-meal-top">
                     <div className="single-meal-image">
                         <h1>{singleMeal.strMeal}</h1>
-                        <img src={singleMeal.strMealThumb} alt={singleMeal.strMeal} style={{ width: '400px' }} />
+                        <img src={singleMeal.strMealThumb} alt={singleMeal.strMeal} />
                     </div>
                     <div className="single-meal-info">
                         {/* { 
@@ -99,7 +98,7 @@ const SingleMeal = () => {
             </div>
             <div className="similar-meals">
                 <h2>Similar meals</h2>  
-                <div style={{display: 'flex'}}>      
+                <div style={{display: 'flex', alignSelf: 'start'}}>      
                     {similarList}
                 </div>      
             </div>

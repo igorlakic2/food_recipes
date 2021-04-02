@@ -12,6 +12,9 @@
 .single-meal-image{
     padding: 30px;
 }
+.single-meal-image img{
+    width: 400px;
+}
 table{
     padding: 0 30px;
     font-size: 16px;
@@ -37,4 +40,8 @@ td:last-child{
 .similar-meal p{
     font-size: 18px;
     padding: 0;
+    width: 250px;
+}
+.similar-meal img{
+    width: 250px;
 }

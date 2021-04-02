@@ -23,13 +23,12 @@ hr{
 .meals{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-self: start;
     flex-wrap: wrap;
     padding: 50px 100px 100px 100px;
 }
 .meals > *{
-    flex: 25%;
-    padding: 20px 0;
+    padding: 20px;
 }
 .right input{
     margin: 40px 0 0 0;

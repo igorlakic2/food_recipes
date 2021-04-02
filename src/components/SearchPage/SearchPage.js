@@ -9,6 +9,7 @@ const SearchPage = () => {
     const { term } = useParams(); 
     const [meals, setMeals] = useState([]);
     const [randomMeal, setRandomMeal] = useState([]);
+    const [sortSelected, setSortSelected] = useState(false);
 
     const searchResults = async (term) => {
         const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
@@ -21,10 +22,10 @@ const SearchPage = () => {
     }    
 
     const mealsList = meals.map(meal => {
-        return <Link to={`/single_meal/${meal.idMeal}`} style={{color: 'black', display: 'inline-block'}} key={meal.idMeal}>  
-                    <div>
-                        <img src={meal.strMealThumb} alt={meal.strMeal} style={{ width: '250px' }} /> 
-                        <p style={{padding: '0'}}>{meal.strMeal}</p>
+        return <Link className="asdf" to={`/single_meal/${meal.idMeal}`} style={{color: 'black', display: 'inline-block'}} key={meal.idMeal}>  
+                    <div className="meal-content">
+                        <img src={meal.strMealThumb} alt={meal.strMeal} className="image" /> 
+                        <p style={{padding: '0', height: '30px'}}>{meal.strMeal}</p>
                         <div style={{paddingTop: '7px'}}>
                             <p style={{padding: '0', margin: '0'}}>Category: <b>{meal.strCategory}</b></p>
                             <p style={{padding: '0', margin: '0'}}>Country: <b>{meal.strArea}</b></p>
@@ -38,34 +39,19 @@ const SearchPage = () => {
         getRandomMeal();
     }, [term]);
 
-    const newAr = [...meals];
-    newAr.sort((a,b) => a.strCategory > b.strCategory);
-    const xy = newAr.sort((a,b) => a.strCategory > b.strCategory).map((x) => {
-        <Link to={`/single_meal/${x.idMeal}`} style={{color: 'black', display: 'inline-block'}} key={x.idMeal}>  
-                    <div>
-                        <img src={x.strMealThumb} alt={x.strMeal} style={{ width: '250px' }} /> 
-                        <p style={{padding: '0'}}>{x.strMeal}</p>
+
+    const sorted = [...meals].sort((a,b) => a.strCategory > b.strCategory).map((meal) => {
+        return <Link className="asdf" to={`/single_meal/${meal.idMeal}`} style={{color: 'black', display: 'inline-block'}} key={meal.idMeal}>  
+                    <div className="meal-content">
+                        <img src={meal.strMealThumb} alt={meal.strMeal} className="image" /> 
+                        <p style={{padding: '0', height: '30px'}}>{meal.strMeal}</p>
                         <div style={{paddingTop: '7px'}}>
-                            <p style={{padding: '0', margin: '0'}}>Category: <b>{x.strCategory}</b></p>
-                            <p style={{padding: '0', margin: '0'}}>Country: <b>{x.strArea}</b></p>
+                            <p style={{padding: '0', margin: '0'}}>Category: <b>{meal.strCategory}</b></p>
+                            <p style={{padding: '0', margin: '0'}}>Country: <b>{meal.strArea}</b></p>
                         </div>
                     </div>            
                 </Link>
     });
-
-    // const sortedMealsList = meals.sort((a, b) => a.strCategory > b.strCategory ? 1 : -1)
-    //     .meals.map(meal => {
-    //     return <Link to={`/single_meal/${meal.idMeal}`} style={{color: 'black', display: 'inline-block'}} key={meal.idMeal}>  
-    //                 <div>
-    //                     <img src={meal.strMealThumb} alt={meal.strMeal} style={{ width: '250px' }} /> 
-    //                     <p style={{padding: '0'}}>{meal.strMeal}</p>
-    //                     <div style={{paddingTop: '7px'}}>
-    //                         <p style={{padding: '0', margin: '0'}}>Category: <b>{meal.strCategory}</b></p>
-    //                         <p style={{padding: '0', margin: '0'}}>Country: <b>{meal.strArea}</b></p>
-    //                     </div>
-    //                 </div>            
-    //             </Link>;
-    // });
 
     return (
         <div>
@@ -77,7 +63,7 @@ const SearchPage = () => {
                         <p style={{ textAlign: 'left' }}>Our recommendation</p>
                         <Link to={`/single_meal/${randomMeal.idMeal}`} style={{color: 'black', display: 'inline-block'}}> 
                             <div>
-                                <img src={randomMeal.strMealThumb} alt={randomMeal.strMeal} style={{ width: '250px' }} /> 
+                                <img className="meal-recommendation" src={randomMeal.strMealThumb} alt={randomMeal.strMeal}/> 
                                 <p style={{padding: '0'}}>{randomMeal.strMeal}</p>
                                 <div>
                                     <p style={{padding: '0', margin: '0'}}>Category: <b>{randomMeal.strCategory}</b></p>
@@ -87,15 +73,16 @@ const SearchPage = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="right">
+                <div className="right" style={{alignSelf: 'end'}}>
                     <select>
-                        <option value="category">Category</option>
+                        <option disabled>Sort by</option>
+                        <option value="category" onClick={() => setSortSelected(true)}>Category</option>
                     </select>
                 </div>
             </div>
             <hr />            
             <div className="search-results">
-                {mealsList}
+                {sortSelected ? sorted : mealsList}
             </div>
             <Footer />
         </div>

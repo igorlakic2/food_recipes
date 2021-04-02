@@ -11,10 +11,18 @@ hr{
 .search-results{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
     padding: 50px 100px 100px 100px;
 }
 .search-results > *{
-    padding: 20px 0;
+    padding: 20px;
+}
+.image{
+    width: 250px;
+}
+.meal-content{
+    width: 250px;
+}
+.meal-recommendation{
+    width: 250px;
 }

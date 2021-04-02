@@ -6,7 +6,7 @@ import Category from '../Category/Category';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-const Home = (props) => {
+const Home = () => {
     const [categories, setCategories] = useState([]);
     const [formData, setFormData] = useState([]);
     const [singleFormData, setSingleFormData] = useState({
@@ -16,8 +16,6 @@ const Home = (props) => {
         message: null
     });
     const [formSubmitted, setFormSubmitted] = useState(false);
-    const [logged, setLogged] = useState(false);
-    const [showForm, setShowForm] = useState(false);
 
     const getCategories = async () => {
         const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
@@ -64,9 +62,8 @@ const Home = (props) => {
 
     return (
         <div>
-            {/* {displayForm()} */}
             <Header />
-            <div className="header-div header">
+            <div className="header-div">
                 <div className="header-left">
                     <h1>Food recipes</h1>
                     <p style={{ textAlign: 'left' }}>
@@ -79,7 +76,7 @@ const Home = (props) => {
                 </div>
                 <div className="header-right">
                     <Link to="/category">
-                        <img src="https://www.thinksmart.rs/static/images/slike/2.jpg" alt="asda" width="500" height="400" />                        
+                        <img src="https://www.thinksmart.rs/static/images/slike/2.jpg" alt="asda" />                        
                     </Link>
                 </div>
             </div>
@@ -123,15 +120,3 @@ const Home = (props) => {
     );
 }
 export default Home;
-
-
-
-
-            // <a data-tip='<div>
-            //     <form action="">
-            //         <input type="text" placeholder="Email" />
-            //         <input type="password" placeholder="Password" />
-            //     <button>Login</button>
-            // </form>
-            // </div>' data-event='click focus'>display</a>
-            // <ReactTooltip globalEventOff='click' html={true} />

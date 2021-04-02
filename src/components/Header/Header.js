@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './Header.css';
+import { HashLink } from 'react-router-hash-link';
 
 const Header = (props) => {    
     const history = useHistory();
@@ -61,10 +62,6 @@ const Header = (props) => {
         </ul>;
     }
 
-    // useEffect(() => {
-    //     logInOrOut();
-    // }, [logged]);
-
     return (
         <div className="header">
             {showForm ? logInOrOut() : null}
@@ -81,10 +78,10 @@ const Header = (props) => {
                         <ul>
                             {showMenuItems()}
                             <li>
-                                <Link className="link" to="/">About Us</Link>
+                                <HashLink smooth className="link" to="/#about-us">About Us</HashLink>
                             </li>
                             <li>
-                                <Link className="link" to="/">Contact</Link>
+                                <HashLink smooth className="link" to="/#contact">Contact</HashLink>
                             </li>
                             {showMyMeals()}
                         </ul>

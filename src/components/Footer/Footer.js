@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="footer">
             <div className="footer-info">
                 <div className="logo">
-                    <img src="https://media-exp1.licdn.com/dms/image/C560BAQH9dPJajdXi_Q/company-logo_200_200/0/1579555511549?e=2159024400&v=beta&t=t50NC6wCpKlFL8QjsFOXIzJkQVdWQsGZ0PVIhTAujKQ" width="130px" height="120px" alt=""/>
+                    <img src="https://media-exp1.licdn.com/dms/image/C560BAQH9dPJajdXi_Q/company-logo_200_200/0/1579555511549?e=2159024400&v=beta&t=t50NC6wCpKlFL8QjsFOXIzJkQVdWQsGZ0PVIhTAujKQ" alt=""/>
                 </div>
                 <div className="social">
                     <Link to="/facebook" target="_blank"><i className="facebook f icon"></i></Link>
