@@ -16,6 +16,8 @@ const Home = (props) => {
         message: null
     });
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const [logged, setLogged] = useState(false);
+    const [showForm, setShowForm] = useState(false);
 
     const getCategories = async () => {
         const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
@@ -55,11 +57,14 @@ const Home = (props) => {
         }
     }
 
+    
+
     useEffect(() => {
     }, [formSubmitted])
 
     return (
         <div>
+            {/* {displayForm()} */}
             <Header />
             <div className="header-div header">
                 <div className="header-left">
