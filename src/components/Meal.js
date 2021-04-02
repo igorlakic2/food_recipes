@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Meal = (props) => {
-    const style = props.style ? {textAlign: 'left'} : {textAlign: 'center'};
+    const style = props.style ? {width: '250px', textAlign: 'left'} : {width: '250px', textAlign: 'center'};
     return (
         <div>
             <Link to={`/single_meal/${props.id}`} style={{display: 'inline-block'}}>  

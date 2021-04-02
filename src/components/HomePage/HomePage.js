@@ -15,6 +15,7 @@ const Home = (props) => {
         email: null,
         message: null
     });
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
     const getCategories = async () => {
         const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
@@ -36,11 +37,26 @@ const Home = (props) => {
     const onFormSubmit = (event) => {
         event.preventDefault();
         setFormData([...formData, singleFormData]);
+        setFormSubmitted(true);
     }    
 
     useEffect(() => {
         console.log(formData);
-    }, [formData])
+    }, [formData]);
+
+    const onFormSubmitMessage = () => {
+        if(formSubmitted){
+            const formMessage = "Your message has been sent"; 
+            setTimeout(() => setFormSubmitted(false), 3000);
+            return formMessage;   
+        }else{
+            const formMessage = "";
+            return formMessage;
+        }
+    }
+
+    useEffect(() => {
+    }, [formSubmitted])
 
     return (
         <div>
@@ -84,15 +100,16 @@ const Home = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="contact">
+            <div className="contact" id="contact">
                 <h2 style={{ textAlign: 'center' }}><span style={{borderBottom: '2px solid black', paddingBottom: '15px' }}>Contact</span></h2>
                 <div className="contact-form">
                     <form onSubmit={onFormSubmit}>
+                        <div style={{textAlign: 'center', margin: 'auto', fontSize: '16px'}}>{onFormSubmitMessage()}</div>
                         <input type="text" onChange={(event) => setSingleFormData({...singleFormData, fname: event.target.value})} placeholder="First name" />
                         <input type="text" onChange={(event) => setSingleFormData({...singleFormData, lname: event.target.value})} placeholder="Last name" />
                         <input type="text" onChange={(event) => setSingleFormData({...singleFormData, email: event.target.value})} placeholder="Email" />
                         <textarea name="" onChange={(event) => setSingleFormData({...singleFormData, message: event.target.value})} cols="30" rows="10" placeholder="Message"></textarea>
-                        <button>Send</button>
+                        <button style={{cursor: 'pointer'}}>Send</button>
                     </form>
                 </div>
             </div>
