@@ -76,7 +76,7 @@ const Home = () => {
                     <button><HashLink smooth to="/#categories" style={{ textDecoration: 'none', color: 'white' }}>Categories <i className="angle down icon"></i></HashLink></button>                    
                 </div>
                 <div className="header-right">
-                    <img src="https://www.thinksmart.rs/static/images/slike/2.jpg" alt="asda" /> 
+                    <img src="https://images.unsplash.com/photo-1576867757603-05b134ebc379?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="asda" /> 
                 </div>
             </div>
             <div id="categories" className="categories">
