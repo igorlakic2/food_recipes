@@ -14,7 +14,7 @@ const Header = (props) => {
 
     const showMenuItems = () => {
         return window.location.pathname === '/' ? 
-        <li className="avatar" onClick={() => setShowForm(!showForm)}>
+        <li className="avatar" onClick={() => setShowForm(!showForm)} style={{userSelect: 'cursor'}}>
             <i className="user circle outline icon"></i>
         </li>        
         : 
@@ -26,7 +26,7 @@ const Header = (props) => {
 
     const showMyMeals = () => {
         if(logged){
-            return <li>
+            return <li style={{userSelect: 'cursor'}}>
                         <Link className="link" to="/mymeals">My meals</Link>
                     </li>;
         }else{
