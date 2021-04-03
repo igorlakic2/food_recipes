@@ -5,6 +5,7 @@ import axios from 'axios';
 import Category from '../Category/Category';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import { HashLink } from 'react-router-hash-link';
 
 const Home = () => {
     const [categories, setCategories] = useState([]);
@@ -72,15 +73,13 @@ const Home = () => {
                         voluptatum mollitia nesciunt dolorum, assumenda impedit. 
                         Rem eveniet, accusantium tempore?
                     </p>
-                    <button><Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Categories <i className="angle down icon"></i></Link></button>                    
+                    <button><HashLink smooth to="/#categories" style={{ textDecoration: 'none', color: 'white' }}>Categories <i className="angle down icon"></i></HashLink></button>                    
                 </div>
                 <div className="header-right">
-                    <Link to="/category">
-                        <img src="https://www.thinksmart.rs/static/images/slike/2.jpg" alt="asda" />                        
-                    </Link>
+                    <img src="https://www.thinksmart.rs/static/images/slike/2.jpg" alt="asda" /> 
                 </div>
             </div>
-            <div className="categories">
+            <div id="categories" className="categories">
                 {categoriesList}
             </div>
             <div className="about-us" id="about-us">

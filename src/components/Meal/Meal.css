@@ -1,0 +1,28 @@
+img{
+    width: 250px;
+}
+.content-div{
+    width: 250px;
+}
+@media (max-width: 650px){
+    img{
+        width: 200px;
+    }
+    .content-div{
+        width: 200px;
+    }
+}
+@media (max-width: 500px){
+    img{
+        width: 140px;
+    }
+    .content-div{
+        width: 140px;
+    }
+    .meals{
+        padding: 50px 0;
+    }
+    .meals > *{
+        margin: auto;
+    }
+}

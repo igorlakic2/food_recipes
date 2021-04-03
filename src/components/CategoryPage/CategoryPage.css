@@ -1,4 +1,4 @@
-.our-recommendation{
+.our-recommendation-category{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -32,4 +32,21 @@ hr{
 }
 .right input{
     margin: 40px 0 0 0;
+}
+@media (max-width: 650px){
+    .right{
+        padding: 0 0 20px 0;
+    }
+    .hr-category{
+        margin: 30px 50px;
+    }
+    .meals{
+        padding: 50px 0 50px 30px;
+    }
+    .our-recommendation-category{
+        padding: 20px 50px;
+        flex-direction: column;
+    }
+}
+@media (max-width: 500px){
 }

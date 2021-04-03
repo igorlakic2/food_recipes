@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Meal.css';
 
 const Meal = (props) => {
-    const style = props.style ? {width: '250px', textAlign: 'left'} : {width: '250px', textAlign: 'center'};
+    const style = props.style ? {textAlign: 'left'} : {textAlign: 'center'};
     return (
         <div>
             <Link to={`/single_meal/${props.id}`} style={{display: 'inline-block'}}>  
-                <div style={style}>
-                    <img src={props.thumbnail} alt={props.name} style={{ width: '250px' }} /> 
+                <div className="content-div" style={style}>
+                    <img src={props.thumbnail} alt={props.name} /> 
                     <p style={{padding: '0'}}>{props.name}</p>
                 </div>            
             </Link>

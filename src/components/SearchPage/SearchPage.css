@@ -1,4 +1,4 @@
-.our-recommendation{
+.our-recommendation-search{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,6 +23,37 @@ hr{
 .meal-content{
     width: 250px;
 }
+.meal-content p{
+    height: 30px;
+}
 .meal-recommendation{
     width: 250px;
+}
+@media (max-width: 800px){
+    .our-recommendation-search{
+        padding: 50px;
+    }
+    .search-results img, .meal-recommendation{
+        width: 200px;
+    }
+    .search-results{
+        padding: 50px;
+    }
+    .meal-content{
+        width: 200px;
+    }
+    .meal-content p{
+        height: unset;
+    }
+    hr {
+        margin: 0px 50px;
+    }
+}
+@media (max-width: 600px){
+    .search-results img, .meal-recommendation{
+        width: 150px;
+    }
+    .meal-content{
+        width: 150px;
+    }
 }

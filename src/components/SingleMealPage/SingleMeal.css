@@ -45,3 +45,41 @@ td:last-child{
 .similar-meal img{
     width: 250px;
 }
+@media (max-width: 900px){
+    .single-meal-image img{
+        width: 300px;
+    }
+    .similar-meal{
+        width: 180px;
+        margin: 0 20px 0 0;
+    }
+    .similar-meal img{
+        width: 180px;
+    }
+    .similar-meal p{
+        width: 180px;
+    }
+}
+@media (max-width: 650px){
+    .single-meal-top{
+        flex-direction: column;
+    }
+    .single-meal-info {
+        padding: 0px 50px 50px 30px;
+    }
+    .single-meal-image img{
+        width: 230px;
+    }
+    .similar-meal{
+        width: 120px;
+    }
+    .similar-meal img{
+        width: 120px;
+    }
+    .similar-meal p{
+        width: 120px;
+        font-size: 13px;
+    }
+}
+@media (max-width: 450px){  
+}

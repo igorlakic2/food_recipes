@@ -13,7 +13,9 @@ const SearchPage = () => {
 
     const searchResults = async (term) => {
         const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
-        setMeals(response.data.meals);        
+        if(response.data.meals !== null){
+            setMeals(response.data.meals);  
+        }      
     }
 
     const getRandomMeal = async () => {
@@ -25,7 +27,7 @@ const SearchPage = () => {
         return <Link className="asdf" to={`/single_meal/${meal.idMeal}`} style={{color: 'black', display: 'inline-block'}} key={meal.idMeal}>  
                     <div className="meal-content">
                         <img src={meal.strMealThumb} alt={meal.strMeal} className="image" /> 
-                        <p style={{padding: '0', height: '30px'}}>{meal.strMeal}</p>
+                        <p style={{padding: '0'}}>{meal.strMeal}</p>
                         <div style={{paddingTop: '7px'}}>
                             <p style={{padding: '0', margin: '0'}}>Category: <b>{meal.strCategory}</b></p>
                             <p style={{padding: '0', margin: '0'}}>Country: <b>{meal.strArea}</b></p>
@@ -56,7 +58,7 @@ const SearchPage = () => {
     return (
         <div>
             <Header />
-            <div className="our-recommendation">
+            <div className="our-recommendation-search">
                 <div className="left">
                     <h1>Search results</h1>
                     <div className="recommendation">
@@ -82,7 +84,7 @@ const SearchPage = () => {
             </div>
             <hr />            
             <div className="search-results">
-                {sortSelected ? sorted : mealsList}
+                {sortSelected ? sorted : mealsList }
             </div>
             <Footer />
         </div>

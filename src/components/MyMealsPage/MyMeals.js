@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import axios from 'axios';
-import Meal from '../Meal';
+import Meal from '../Meal/Meal';
 import './MyMeals.css';
 
 const MyMeals = () => {

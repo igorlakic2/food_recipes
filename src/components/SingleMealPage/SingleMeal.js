@@ -98,7 +98,7 @@ const SingleMeal = () => {
             </div>
             <div className="similar-meals">
                 <h2>Similar meals</h2>  
-                <div style={{display: 'flex', alignSelf: 'start'}}>      
+                <div style={{display: 'flex', flexWrap: 'wrap', alignSelf: 'start'}}>      
                     {similarList}
                 </div>      
             </div>

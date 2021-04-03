@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './CategoryPage.css';
-import Meal from '../Meal';
+import Meal from '../Meal/Meal';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
@@ -44,7 +44,7 @@ const CategoryPage = () => {
     return (
         <div className="category-page">
             <Header />
-            <div className="our-recommendation">
+            <div className="our-recommendation-category">
                 <div className="left">
                     <h1>{name}</h1>
                     <div className="recommendation">
@@ -61,7 +61,7 @@ const CategoryPage = () => {
                     <input onChange={(event) => setSearchTerm(event.target.value)} type="text" className="inputSearch" placeholder="Search meals" />
                 </div>
             </div>
-            <hr />
+            <hr className="hr-category" />
             <div className="meals">{searchTerm.length > 0 ? searchResultsList : renderMeals}</div>
             <Footer />
         </div>
